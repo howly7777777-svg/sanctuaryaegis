@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanctuary - Privacy Policy / 隱私政策</title>
+    <title>Sanctuary — Private Secret Spaces for Couples, Besties & Family</title>
+    <meta name="description" content="Sanctuary is a zero-server, 1-on-1 private messenger with emotion tagging, home screen widgets, and shared notes. Designed for couples, best friends, and family.">
     <style>
         :root {
             --bg-color: #F9F6F0;
@@ -11,47 +12,81 @@
             --text-primary: #4A3F35;
             --text-secondary: #8C7C6D;
             --accent-color: #E58A8A;
+            --accent-gold: #D4A85C;
             --border-color: #E5E1D8;
         }
+        * { box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-primary);
             margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        nav {
+            max-width: 1000px;
+            margin: 0 auto;
             padding: 20px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
         }
-        .container {
-            max-width: 720px;
-            width: 100%;
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid var(--border-color);
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--accent-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .header {
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 24px;
-            margin-bottom: 24px;
-        }
-        .header h1 {
-            color: var(--text-primary);
-            font-size: 28px;
-            margin: 0 0 8px 0;
-        }
-        .header p {
+        .nav-links a {
             color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 20px;
             font-size: 14px;
-            margin: 0;
+            font-weight: 500;
+        }
+        .nav-links a:hover { color: var(--accent-color); }
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+        .badge-list {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        .badge-item {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
         }
         .lang-select {
             display: flex;
             justify-content: center;
             gap: 8px;
-            margin-top: 16px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
         }
         .lang-btn {
@@ -62,138 +97,226 @@
             border-radius: 16px;
             cursor: pointer;
             font-size: 13px;
-            transition: all 0.2s;
         }
         .lang-btn.active, .lang-btn:hover {
             background: var(--accent-color);
             color: #FFF;
             border-color: var(--accent-color);
         }
-        .content {
-            line-height: 1.7;
-            font-size: 15px;
+        .features {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
         }
-        .content h2 {
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+        .feature-card h3 {
+            font-size: 20px;
+            margin: 0 0 10px 0;
+            color: var(--text-primary);
+        }
+        .feature-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        .pricing {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px 20px;
+            background: var(--card-bg);
+            border-radius: 28px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+        .pricing h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .pricing-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .price-card {
+            flex: 1;
+            min-width: 250px;
+            max-width: 340px;
+            padding: 24px;
+            border-radius: 20px;
+            background: var(--bg-color);
+            border: 2px solid var(--accent-color);
+        }
+        .price-card.lifetime {
+            border-color: var(--accent-gold);
+        }
+        .price-card h4 {
+            font-size: 20px;
+            margin: 0 0 8px 0;
+        }
+        .price-val {
+            font-size: 32px;
+            font-weight: 800;
             color: var(--accent-color);
-            font-size: 18px;
-            margin-top: 24px;
+            margin-bottom: 8px;
         }
-        .lang-section {
-            display: none;
-        }
-        .lang-section.active {
-            display: block;
+        .price-card.lifetime .price-val { color: var(--accent-gold); }
+        .subtext {
+            font-size: 13px;
+            color: var(--text-secondary);
         }
         .footer {
-            margin-top: 40px;
             text-align: center;
-            font-size: 12px;
+            padding: 40px 20px;
+            font-size: 13px;
             color: var(--text-secondary);
             border-top: 1px solid var(--border-color);
-            padding-top: 20px;
         }
+        .footer a { color: var(--accent-color); text-decoration: none; }
+        .lang-section { display: none; }
+        .lang-section.active { display: block; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Sanctuary</h1>
-            <p>Privacy Policy / 隱私政策 / プライバシーポリシー</p>
-            <div class="lang-select">
-                <button class="lang-btn active" onclick="switchLang('zh-TW')">繁體中文</button>
-                <button class="lang-btn" onclick="switchLang('en')">English</button>
-                <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
-                <button class="lang-btn" onclick="switchLang('ko')">한국어</button>
-                <button class="lang-btn" onclick="switchLang('zh-CN')">简体中文</button>
+    <nav>
+        <a href="#" class="logo">💖 Sanctuary</a>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="mailto:howly7777777@gmail.com">Support Email</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="lang-select">
+            <button class="lang-btn active" onclick="switchLang('en')">English</button>
+            <button class="lang-btn" onclick="switchLang('zh-TW')">繁體中文</button>
+            <button class="lang-btn" onclick="switchLang('zh-CN')">简体中文</button>
+            <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
+            <button class="lang-btn" onclick="switchLang('ko')">한국어</button>
+        </div>
+
+        <!-- English -->
+        <div id="en" class="lang-section active">
+            <h1>Private Secret Spaces for Couples, Besties & Family</h1>
+            <p>Zero Central Server. 1-on-1 End-to-End Encrypted Messaging, Emotion Tagging, and Home Screen Widgets.</p>
+            <div class="badge-list">
+                <div class="badge-item">🔒 100% Zero-Server Privacy</div>
+                <div class="badge-item">🏠 Multi-Space Channels</div>
+                <div class="badge-item">🎭 Emotion Tagging</div>
+                <div class="badge-item">📱 Home Screen Widget</div>
             </div>
         </div>
 
-        <div class="content">
-            <!-- 繁體中文 -->
-            <div id="zh-TW" class="lang-section active">
-                <h2>1. 零資料收集與隱私承諾</h2>
-                <p>Sanctuary 是一款專為情侶設計的區域加密通訊工具。我們不會在任何外部中央伺服器上記錄、儲存、追蹤或傳輸您的任何個人資料、對話記錄或對話內容。</p>
-
-                <h2>2. 通訊加密與資料儲存</h2>
-                <p>所有的對話內容、情緒標籤與共用筆記均透過 Apple MultipeerConnectivity（近距離點對點加密）或您個人的 Apple iCloud Private Database 進行發送與同步。資料僅保留在您與伴侶的手機裝置及個人 iCloud 帳號中。</p>
-
-                <h2>3. 第三方 SDK 與追蹤</h2>
-                <p>Sanctuary 不包含任何第三方廣告、追蹤代碼或數據分析 SDK。您的個人資訊絕不會被出售、出租或分享給任何第三方公司。</p>
-
-                <h2>4. 資料刪除與安全</h2>
-                <p>您可以隨時於 App 內清除對話記錄，或解除安裝 App，這將會永久且完全刪除本地手機上儲存的所有資料。</p>
-
-                <h2>5. 聯絡方式</h2>
-                <p>若您對隱私政策有任何疑問，請透過 App Store 開發者資訊頁面與我們聯繫。</p>
-            </div>
-
-            <!-- English -->
-            <div id="en" class="lang-section">
-                <h2>1. Zero Data Collection & Privacy Commitment</h2>
-                <p>Sanctuary is a private, encrypted communication app designed for couples. We do not log, store, track, or transfer any of your personal data, messages, or chat histories to any external central servers.</p>
-
-                <h2>2. Encryption & Data Storage</h2>
-                <p>All chat messages, emotion tags, and shared notes are sent and synchronized exclusively via Apple MultipeerConnectivity (P2P end-to-end encryption) or your personal Apple iCloud Private Database. Data remains strictly on your device and your personal iCloud account.</p>
-
-                <h2>3. Third-Party Analytics & Tracking</h2>
-                <p>Sanctuary contains no third-party advertisements, tracking software, or analytics SDKs. Your personal information is never sold, rented, or shared with any third party.</p>
-
-                <h2>4. Data Deletion</h2>
-                <p>You can clear your chat history anytime inside the app or delete the app completely, which permanently removes all locally stored data.</p>
-
-                <h2>5. Contact Us</h2>
-                <p>If you have any questions regarding this Privacy Policy, please contact us via the App Store developer support page.</p>
-            </div>
-
-            <!-- 日本語 -->
-            <div id="ja" class="lang-section">
-                <h2>1. 個人情報の収集ゼロとプライバシーの約束</h2>
-                <p>Sanctuaryはカップル向けのアノニマスかつ暗号化されたプライベートチャットアプリです。当社は、お客様の個人データ、メッセージ履歴、チャット内容を外部サーバーに記録、保存、追跡、または送信することはありません。</p>
-
-                <h2>2. 暗号化とデータ保管</h2>
-                <p>すべてのメッセージ、感情タグ、共有ノートは、Apple MultipeerConnectivity（P2P直接暗号化通信）または個人用Apple iCloud Private Databaseを介してのみ共有されます。データはお客様とパートナーのデバイスおよび個人のiCloudアカウントにのみ保存されます。</p>
-
-                <h2>3. サードパーティ追跡の排除</h2>
-                <p>Sanctuaryには、サードパーティの広告、追跡コード、または分析SDKは一切含まれていません。お客様の個人情報が第三者に販売、共有されることはありません。</p>
-
-                <h2>4. データの消去</h2>
-                <p>アプリ内でチャット履歴を削除するか、アプリをアンインストールすることで、端末に保存されているすべてのデータを完全に消去できます。</p>
-            </div>
-
-            <!-- 한국어 -->
-            <div id="ko" class="lang-section">
-                <h2>1. 개인정보 수집 제로 및 정보 보호 프라이버시 약속</h2>
-                <p>Sanctuary는 커플을 위한 개인 암호화 프라이빗 메신저 앱입니다. 당사는 어떠한 개인 데이터, 메시지 기록 또는 대화 내용도 외부 중앙 서버에 저장, 추적 또는 전송하지 않습니다.</p>
-
-                <h2>2. 암호화 및 데이터 저장</h2>
-                <p>모든 대화 내용, 감정 태그 및 공유 메모는 Apple MultipeerConnectivity(P2P 암호화 통신) 또는 개인 Apple iCloud Private Database를 통해서만 전송 및 동기화됩니다.</p>
-
-                <h2>3. 제3자 추적 없음</h2>
-                <p>Sanctuary에는 어떠한 제3자 광고, 추적 코드 또는 분석 SDK도 포함되어 있지 않습니다.</p>
-
-                <h2>4. 데이터 삭제</h2>
-                <p>앱 내에서 대화 기록을 삭제하거나 앱을 삭제하면 기기에 저장된 모든 데이터가 완전히 삭제됩니다.</p>
-            </div>
-
-            <!-- 简体中文 -->
-            <div id="zh-CN" class="lang-section">
-                <h2>1. 零数据收集与隐私承诺</h2>
-                <p>Sanctuary 是一款专为情侣设计的私密加密通讯工具。我们不会在任何外部中央服务器上记录、存储、追踪或传输您的任何个人数据或聊天记录。</p>
-
-                <h2>2. 通讯加密与数据存储</h2>
-                <p>所有的聊天内容、情绪标签与共享笔记均通过 Apple MultipeerConnectivity（点对点加密）或您个人的 Apple iCloud Private Database 进行传输。数据仅保留在您与伴侣的手机设备及个人 iCloud 账号中。</p>
-
-                <h2>3. 无第三方 SDK 追踪</h2>
-                <p>Sanctuary 不包含任何第三方广告或数据分析 SDK。您的个人信息绝不会被出售、出租或分享给任何第三方。</p>
-
-                <h2>4. 数据删除</h2>
-                <p>您可以随时在 App 内清除聊天记录，或卸载 App，这将永久且完全删除本地手机上存储的所有数据。</p>
+        <!-- 繁體中文 -->
+        <div id="zh-TW" class="lang-section">
+            <h1>專屬情侶、閨密與家人的私密秘密基地</h1>
+            <p>零中央伺服器備份。1-to-1 點對點加密通訊、獨家語氣情緒標籤與桌面 Widget 小工具。</p>
+            <div class="badge-list">
+                <div class="badge-item">🔒 零伺服器極致隱私</div>
+                <div class="badge-item">🏠 多頻道獨立空間</div>
+                <div class="badge-item">🎭 語氣情緒標籤</div>
+                <div class="badge-item">📱 桌面 Widget 小工具</div>
             </div>
         </div>
 
-        <div class="footer">
-            &copy; 2026 Sanctuary. All rights reserved.
+        <!-- 簡體中文 -->
+        <div id="zh-CN" class="lang-section">
+            <h1>专属情侣、闺蜜与家人的私密秘密基地</h1>
+            <p>零中央服务器备份。1-to-1 点对点加密通讯、独家语气情绪标签与桌面 Widget 小工具。</p>
+            <div class="badge-list">
+                <div class="badge-item">🔒 零服务器极致隐私</div>
+                <div class="badge-item">🏠 多频道独立空间</div>
+                <div class="badge-item">🎭 语气情绪标签</div>
+                <div class="badge-item">📱 桌面 Widget 小工具</div>
+            </div>
         </div>
+
+        <!-- 日本語 -->
+        <div id="ja" class="lang-section">
+            <h1>恋人・親友・家族のための完全プライベート空間</h1>
+            <p>サーバー保存ゼロ。1-on-1暗号化チャット、感情タグ、ホーム画面ウィジェット対応。</p>
+            <div class="badge-list">
+                <div class="badge-item">🔒 サーバー保存ゼロ</div>
+                <div class="badge-item">🏠 マルチスペース対応</div>
+                <div class="badge-item">🎭 感情タグ機能</div>
+                <div class="badge-item">📱 ホーム画面ウィジェット</div>
+            </div>
+        </div>
+
+        <!-- 한국어 -->
+        <div id="ko" class="lang-section">
+            <h1>연인, 절친, 가족을 위한 프라이빗 비밀 공간</h1>
+            <p>중앙 서버 저장 제로. 1대1 종단간 암호화 대화, 감정 태그, 홈 화면 위젯 지원.</p>
+            <div class="badge-list">
+                <div class="badge-item">🔒 서버 저장 제로</div>
+                <div class="badge-item">🏠 다중 공간 지원</div>
+                <div class="badge-item">🎭 감정 태그 기능</div>
+                <div class="badge-item">📱 홈 화면 위젯</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features" id="features">
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Zero Central Server</h3>
+            <p>Messages and notes never touch third-party servers. All data stays strictly on your phone and personal iCloud.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏠</div>
+            <h3>Multi-Space Channels</h3>
+            <p>Easily switch between independent 1-on-1 secret bases for Couples, Besties, or Family with zero data overlap.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎭</div>
+            <h3>Emotion Tagging</h3>
+            <p>Attach emotion tags ([Affectionate], [Joking], [Safe], [Rant]) to avoid cold text misunderstandings.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Home Screen Widgets</h3>
+            <p>View your partner or bestie's real-time emotion tag, message preview, and days together right from your iPhone screen.</p>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="pricing" id="pricing">
+        <h2>Sanctuary Pro Pricing</h2>
+        <p class="subtext">One Pays, Both Unlock Pro Features Automatically!</p>
+        
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h4>Annual Plan</h4>
+                <div class="price-val">$14.99 <span style="font-size:14px;font-weight:400;">/ year</span></div>
+                <p class="subtext">includes 1-Month FREE Trial<br>(Only $1.25 / month)</p>
+            </div>
+            <div class="price-card lifetime">
+                <h4>Lifetime Access</h4>
+                <div class="price-val">$39.99 <span style="font-size:14px;font-weight:400;">one-time</span></div>
+                <p class="subtext">Pay once, unlock forever for both devices</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Sanctuary. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | Support: <a href="mailto:howly7777777@gmail.com">howly7777777@gmail.com</a></p>
     </div>
 
     <script>
