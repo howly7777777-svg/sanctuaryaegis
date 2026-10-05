@@ -1,331 +1,580 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanctuary — Private Secret Spaces for Couples, Besties & Family</title>
-    <meta name="description" content="Sanctuary is a zero-server, 1-on-1 private messenger with emotion tagging, home screen widgets, and shared notes. Designed for couples, best friends, and family.">
-    <style>
-        :root {
-            --bg-color: #F9F6F0;
-            --card-bg: #FFFFFF;
-            --text-primary: #4A3F35;
-            --text-secondary: #8C7C6D;
-            --accent-color: #E58A8A;
-            --accent-gold: #D4A85C;
-            --border-color: #E5E1D8;
-        }
-        * { box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        nav {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--accent-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-        .nav-links a:hover { color: var(--accent-color); }
-        .hero {
-            text-align: center;
-            padding: 60px 20px 40px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .hero h1 {
-            font-size: 42px;
-            line-height: 1.2;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-        }
-        .hero p {
-            font-size: 18px;
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-        }
-        .badge-list {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-        .badge-item {
-            background: #FFFFFF;
-            border: 1px solid var(--border-color);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        .lang-select {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        .lang-btn {
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            padding: 6px 14px;
-            border-radius: 16px;
-            cursor: pointer;
-            font-size: 13px;
-        }
-        .lang-btn.active, .lang-btn:hover {
-            background: var(--accent-color);
-            color: #FFF;
-            border-color: var(--accent-color);
-        }
-        .features {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-        .feature-card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 24px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        }
-        .feature-icon {
-            font-size: 36px;
-            margin-bottom: 16px;
-        }
-        .feature-card h3 {
-            font-size: 20px;
-            margin: 0 0 10px 0;
-            color: var(--text-primary);
-        }
-        .feature-card p {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin: 0;
-        }
-        .pricing {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 40px 20px;
-            background: var(--card-bg);
-            border-radius: 28px;
-            border: 1px solid var(--border-color);
-            text-align: center;
-        }
-        .pricing h2 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-        .pricing-grid {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-        .price-card {
-            flex: 1;
-            min-width: 250px;
-            max-width: 340px;
-            padding: 24px;
-            border-radius: 20px;
-            background: var(--bg-color);
-            border: 2px solid var(--accent-color);
-        }
-        .price-card.lifetime {
-            border-color: var(--accent-gold);
-        }
-        .price-card h4 {
-            font-size: 20px;
-            margin: 0 0 8px 0;
-        }
-        .price-val {
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--accent-color);
-            margin-bottom: 8px;
-        }
-        .price-card.lifetime .price-val { color: var(--accent-gold); }
-        .subtext {
-            font-size: 13px;
-            color: var(--text-secondary);
-        }
-        .footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 13px;
-            color: var(--text-secondary);
-            border-top: 1px solid var(--border-color);
-        }
-        .footer a { color: var(--accent-color); text-decoration: none; }
-        .lang-section { display: none; }
-        .lang-section.active { display: block; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanctuary Aegis • 100% On-Device Zero-Knowledge Clinical Scribe</title>
+  <meta name="description" content="Sanctuary Aegis (庇護之盾) is an on-device, zero-knowledge clinical scribe for psychotherapists, psychiatrists, and clinical psychologists. Powered by WhisperKit and Apple Neural Engine. Zero cloud. Zero disk audio footprint.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --bg-card: rgba(22, 27, 34, 0.75);
+      --bg-card-hover: rgba(30, 41, 59, 0.85);
+      --border: rgba(255, 255, 255, 0.1);
+      --border-accent: rgba(52, 211, 153, 0.3);
+      --mint: #10b981;
+      --mint-glow: rgba(16, 185, 129, 0.35);
+      --cyan: #06b6d4;
+      --purple: #a855f7;
+      --orange: #f59e0b;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Background Glow */
+    .ambient-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      background: 
+        radial-gradient(circle at 20% 15%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(6, 182, 212, 0.10) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(168, 85, 247, 0.08) 0%, transparent 50%);
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Navigation */
+    header {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .app-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px var(--mint-glow);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 40%, var(--mint));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .nav-btn {
+      padding: 8px 16px;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--mint);
+      border: 1px solid var(--mint);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .nav-btn:hover {
+      background: var(--mint);
+      color: #0b0f17;
+      box-shadow: 0 0 16px var(--mint-glow);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 90px 0 60px;
+      text-align: center;
+    }
+
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid var(--border-accent);
+      color: var(--mint);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--mint), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+    }
+
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .btn-primary {
+      padding: 14px 28px;
+      background: linear-gradient(135deg, var(--mint), #059669);
+      color: #0b0f17;
+      font-weight: 700;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 8px 24px var(--mint-glow);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(16, 185, 129, 0.5);
+    }
+
+    .btn-secondary {
+      padding: 14px 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 600;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 1rem;
+      backdrop-filter: blur(12px);
+      transition: background 0.2s, border-color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Specs Banner */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 50px 0;
+    }
+
+    .spec-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      padding: 20px;
+      border-radius: 14px;
+      text-align: left;
+    }
+
+    .spec-icon {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .spec-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .spec-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Architecture Features Section */
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 80px 0 16px;
+    }
+
+    .section-desc {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 50px;
+      font-size: 1.05rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px;
+      backdrop-filter: blur(16px);
+      transition: transform 0.2s, border-color 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-accent);
+    }
+
+    .feature-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-mint { background: rgba(16, 185, 129, 0.15); color: var(--mint); }
+    .badge-cyan { background: rgba(6, 182, 212, 0.15); color: var(--cyan); }
+    .badge-purple { background: rgba(168, 85, 247, 0.15); color: var(--purple); }
+    .badge-orange { background: rgba(245, 158, 11, 0.15); color: var(--orange); }
+
+    .feature-card h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .code-chip {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: #38bdf8;
+      overflow-x: auto;
+    }
+
+    /* 5 Languages Showcase */
+    .languages-card {
+      background: linear-gradient(135deg, rgba(22, 27, 34, 0.9), rgba(15, 23, 42, 0.9));
+      border: 1px solid var(--border-accent);
+      border-radius: 20px;
+      padding: 40px;
+      margin: 70px 0;
+      text-align: center;
+    }
+
+    .lang-pills {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .lang-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 9999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lang-pill span {
+      color: var(--mint);
+    }
+
+    /* Disclaimer Card */
+    .disclaimer-card {
+      background: rgba(245, 158, 11, 0.05);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 14px;
+      padding: 24px;
+      margin: 60px 0;
+    }
+
+    .disclaimer-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--orange);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .disclaimer-text {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      margin-top: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: var(--mint);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.3rem; }
+      .feature-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+      footer div { margin-top: 10px; }
+      footer a { margin: 0 10px; }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="#" class="logo">💖 Sanctuary</a>
-        <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#pricing">Pricing</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="mailto:howly7777777@gmail.com">Support Email</a>
-        </div>
-    </nav>
+  <div class="ambient-bg"></div>
 
-    <div class="hero">
-        <div class="lang-select">
-            <button class="lang-btn active" onclick="switchLang('en')">English</button>
-            <button class="lang-btn" onclick="switchLang('zh-TW')">繁體中文</button>
-            <button class="lang-btn" onclick="switchLang('zh-CN')">简体中文</button>
-            <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
-            <button class="lang-btn" onclick="switchLang('ko')">한국어</button>
+  <div class="container">
+    <header>
+      <a href="index.html" class="logo-group">
+        <svg class="app-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="22" fill="#0B132B"/>
+          <path d="M50 15L78 28V52C78 68.5 66 81.5 50 86C34 81.5 22 68.5 22 52V28L50 15Z" fill="url(#shieldGrad)" stroke="#34D399" stroke-width="2.5"/>
+          <path d="M50 32C44.477 32 40 36.477 40 42V52C40 57.523 44.477 62 50 62C55.523 62 60 57.523 60 52V42C60 36.477 55.523 32 50 32Z" stroke="#F1F5F9" stroke-width="2.5" fill="none"/>
+          <path d="M34 48C34 56.837 41.163 64 50 64C58.837 64 66 56.837 66 48" stroke="#34D399" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="50" y1="64" x2="50" y2="72" stroke="#34D399" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="42" y1="72" x2="58" y2="72" stroke="#34D399" stroke-width="2.5" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="shieldGrad" x1="50" y1="15" x2="50" y2="86" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#1E293B"/>
+              <stop offset="1" stop-color="#0F172A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="logo-text">Sanctuary Aegis</span>
+      </a>
+      <nav>
+        <a href="#features">Architecture</a>
+        <a href="#languages">Languages</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="privacy.html" class="nav-btn">HIPAA & Consent</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="pill-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        100% On-Device • Apple Silicon Neural Engine • Zero-Knowledge
+      </div>
+      <h1>The Clinical Scribe Built for<br><span>Absolute Client Sanctuary.</span></h1>
+      <p class="hero-subtitle">
+        Zero cloud servers. Zero disk audio footprint. Continuous in-memory streaming on Apple Neural Engine with cryptographic Proof-of-Erasure certification.
+      </p>
+      <div class="cta-group">
+        <a href="#features" class="btn-primary">
+          Explore Architecture
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="privacy.html" class="btn-secondary">
+          Zero-Cloud Privacy Policy
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </a>
+      </div>
+
+      <div class="specs-grid">
+        <div class="spec-item">
+          <div class="spec-icon">⚡</div>
+          <div class="spec-title">WhisperKit On-Device</div>
+          <div class="spec-desc">Runs entirely on Apple ANE & Metal. Zero external API calls.</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-icon">🛡️</div>
+          <div class="spec-title">RAM Zero-Fill Purge</div>
+          <div class="spec-desc">Audio is overwritten via memset_s(0x00) immediately upon note extraction.</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-icon">🔐</div>
+          <div class="spec-title">Apple Secure Enclave</div>
+          <div class="spec-desc">Hardware-isolated AES-GCM keys. Notes stored in local SQLCipher.</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-icon">⚖️</div>
+          <div class="spec-title">Two-Party Wiretap Safe</div>
+          <div class="spec-desc">Statutory audio start chime & client disclosure enforcement.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2 class="section-title">Engineered to Defend Clinicians & Clients</h2>
+      <p class="section-desc">Traditional AI scribes upload intimate therapy audio to third-party clouds. Sanctuary Aegis keeps every byte quarantined on your Apple device.</p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-badge badge-mint">Memory Safety</div>
+          <h3>Deterministic Proof-of-Erasure</h3>
+          <p>Upon completing a clinical session, audio is immediately destroyed in volatile memory via <code>memset_s</code> zero-fill. The system generates a cryptographic SHA-256 certificate signed by Apple Secure Enclave.</p>
+          <div class="code-chip">memset_s(buffer, 0x00, len) → SHA-256 Verified</div>
         </div>
 
-        <!-- English -->
-        <div id="en" class="lang-section active">
-            <h1>Private Secret Spaces for Couples, Besties & Family</h1>
-            <p>Zero Central Server. 1-on-1 End-to-End Encrypted Messaging, Emotion Tagging, and Home Screen Widgets.</p>
-            <div class="badge-list">
-                <div class="badge-item">🔒 100% Zero-Server Privacy</div>
-                <div class="badge-item">🏠 Multi-Space Channels</div>
-                <div class="badge-item">🎭 Emotion Tagging</div>
-                <div class="badge-item">📱 Home Screen Widget</div>
-            </div>
+        <div class="feature-card">
+          <div class="feature-badge badge-cyan">Legal Defense</div>
+          <h3>Two-Party Consent Enforcement</h3>
+          <p>Satisfies California Penal Code § 632, Florida Stat. § 934.03, and international wiretap statutes. Enforces client verbal consent and plays an audible start chime before the microphone opens.</p>
+          <div class="code-chip">Audio Chime Triggered • Consent Logged Locally</div>
         </div>
 
-        <!-- 繁體中文 -->
-        <div id="zh-TW" class="lang-section">
-            <h1>專屬情侶、閨密與家人的私密秘密基地</h1>
-            <p>零中央伺服器備份。1-to-1 點對點加密通訊、獨家語氣情緒標籤與桌面 Widget 小工具。</p>
-            <div class="badge-list">
-                <div class="badge-item">🔒 零伺服器極致隱私</div>
-                <div class="badge-item">🏠 多頻道獨立空間</div>
-                <div class="badge-item">🎭 語氣情緒標籤</div>
-                <div class="badge-item">📱 桌面 Widget 小工具</div>
-            </div>
+        <div class="feature-card">
+          <div class="feature-badge badge-purple">Clinical Intelligence</div>
+          <h3>SOAP, DAP, BIRP & CBT Matrix</h3>
+          <p>Structures dialogue into standardized clinical psychiatric formats. Evaluates cognitive distortions, affective valence (-5.0 to +5.0), and monitors therapeutic working alliance over months.</p>
+          <div class="code-chip">DSM-5-TR Differential • On-Device Apple Models</div>
         </div>
 
-        <!-- 簡體中文 -->
-        <div id="zh-CN" class="lang-section">
-            <h1>专属情侣、闺蜜与家人的私密秘密基地</h1>
-            <p>零中央服务器备份。1-to-1 点对点加密通讯、独家语气情绪标签与桌面 Widget 小工具。</p>
-            <div class="badge-list">
-                <div class="badge-item">🔒 零服务器极致隐私</div>
-                <div class="badge-item">🏠 多频道独立空间</div>
-                <div class="badge-item">🎭 语气情绪标签</div>
-                <div class="badge-item">📱 桌面 Widget 小工具</div>
-            </div>
+        <div class="feature-card">
+          <div class="feature-badge badge-orange">Continuous Continuity</div>
+          <h3>Mac, iPad & iPhone Companion</h3>
+          <p>Use Apple Continuity Microphone or pair iPhone as a standalone pocket companion via local Bonjour peer-to-peer encryption. Instant 2-second AirDrop import to your desktop Studio.</p>
+          <div class="code-chip">P2P Local Bonjour • Zero Router Port Forwarding</div>
         </div>
+      </div>
+    </section>
 
-        <!-- 日本語 -->
-        <div id="ja" class="lang-section">
-            <h1>恋人・親友・家族のための完全プライベート空間</h1>
-            <p>サーバー保存ゼロ。1-on-1暗号化チャット、感情タグ、ホーム画面ウィジェット対応。</p>
-            <div class="badge-list">
-                <div class="badge-item">🔒 サーバー保存ゼロ</div>
-                <div class="badge-item">🏠 マルチスペース対応</div>
-                <div class="badge-item">🎭 感情タグ機能</div>
-                <div class="badge-item">📱 ホーム画面ウィジェット</div>
-            </div>
-        </div>
+    <section id="languages" class="languages-card">
+      <div class="feature-badge badge-mint">Global Clinical Standard</div>
+      <h2 style="font-size: 2rem; margin-bottom: 12px;">Standardized in 5 Languages</h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+        Clinical psychology and psychiatric terminologies fully localized according to APA and DSM-5-TR standards.
+      </p>
+      <div class="lang-pills">
+        <div class="lang-pill"><span>繁體中文</span> (Traditional Chinese)</div>
+        <div class="lang-pill"><span>简体中文</span> (Simplified Chinese)</div>
+        <div class="lang-pill"><span>English</span> (International)</div>
+        <div class="lang-pill"><span>日本語</span> (Japanese)</div>
+        <div class="lang-pill"><span>한국어</span> (Korean)</div>
+      </div>
+    </section>
 
-        <!-- 한국어 -->
-        <div id="ko" class="lang-section">
-            <h1>연인, 절친, 가족을 위한 프라이빗 비밀 공간</h1>
-            <p>중앙 서버 저장 제로. 1대1 종단간 암호화 대화, 감정 태그, 홈 화면 위젯 지원.</p>
-            <div class="badge-list">
-                <div class="badge-item">🔒 서버 저장 제로</div>
-                <div class="badge-item">🏠 다중 공간 지원</div>
-                <div class="badge-item">🎭 감정 태그 기능</div>
-                <div class="badge-item">📱 홈 화면 위젯</div>
-            </div>
-        </div>
+    <div class="disclaimer-card">
+      <div class="disclaimer-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        CLINICAL ADMINISTRATIVE MEMORANDUM & NON-DIAGNOSTIC NOTICE
+      </div>
+      <p class="disclaimer-text">
+        Sanctuary Aegis functions strictly as an administrative scribe assistant under licensed clinical supervision. It does not provide autonomous clinical diagnosis, psychiatric prescriptions, or triage emergency interventions (compliant with FDA 21 CFR 860 and Apple App Store Review Guideline 1.4.1). Diagnostic and legal therapeutic authority resides exclusively with the attending clinician.
+      </p>
     </div>
 
-    <!-- Features Section -->
-    <div class="features" id="features">
-        <div class="feature-card">
-            <div class="feature-icon">🔒</div>
-            <h3>Zero Central Server</h3>
-            <p>Messages and notes never touch third-party servers. All data stays strictly on your phone and personal iCloud.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">🏠</div>
-            <h3>Multi-Space Channels</h3>
-            <p>Easily switch between independent 1-on-1 secret bases for Couples, Besties, or Family with zero data overlap.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">🎭</div>
-            <h3>Emotion Tagging</h3>
-            <p>Attach emotion tags ([Affectionate], [Joking], [Safe], [Rant]) to avoid cold text misunderstandings.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">📱</div>
-            <h3>Home Screen Widgets</h3>
-            <p>View your partner or bestie's real-time emotion tag, message preview, and days together right from your iPhone screen.</p>
-        </div>
-    </div>
-
-    <!-- Pricing Section -->
-    <div class="pricing" id="pricing">
-        <h2>Sanctuary Pro Pricing</h2>
-        <p class="subtext">One Pays, Both Unlock Pro Features Automatically!</p>
-        
-        <div class="pricing-grid">
-            <div class="price-card">
-                <h4>Annual Plan</h4>
-                <div class="price-val">$14.99 <span style="font-size:14px;font-weight:400;">/ year</span></div>
-                <p class="subtext">includes 1-Month FREE Trial<br>(Only $1.25 / month)</p>
-            </div>
-            <div class="price-card lifetime">
-                <h4>Lifetime Access</h4>
-                <div class="price-val">$39.99 <span style="font-size:14px;font-weight:400;">one-time</span></div>
-                <p class="subtext">Pay once, unlock forever for both devices</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p>&copy; 2026 Sanctuary. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | Support: <a href="mailto:howly7777777@gmail.com">howly7777777@gmail.com</a></p>
-    </div>
-
-    <script>
-        function switchLang(lang) {
-            document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
-            document.getElementById(lang).classList.add('active');
-            event.target.classList.add('active');
-        }
-    </script>
+    <footer>
+      <div>
+        <strong>Sanctuary Aegis</strong> • Bundle ID: <code>com.vajrahowly.sanctuaryaegis</code><br>
+        © 2026 Vajra Howly. All rights reserved.
+      </div>
+      <div>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="https://github.com/vajrapadma" target="_blank" rel="noopener">GitHub</a>
+        <a href="#features">Architecture</a>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

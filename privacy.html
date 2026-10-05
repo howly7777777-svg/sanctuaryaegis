@@ -1,230 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanctuary — Privacy Policy / 隱私政策</title>
-    <style>
-        :root {
-            --bg-color: #F9F6F0;
-            --card-bg: #FFFFFF;
-            --text-primary: #4A3F35;
-            --text-secondary: #8C7C6D;
-            --accent-color: #E58A8A;
-            --border-color: #E5E1D8;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            max-width: 760px;
-            width: 100%;
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid var(--border-color);
-        }
-        .nav-back {
-            margin-bottom: 20px;
-        }
-        .nav-back a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-        }
-        .header {
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 24px;
-            margin-bottom: 24px;
-        }
-        .header h1 {
-            color: var(--text-primary);
-            font-size: 28px;
-            margin: 0 0 8px 0;
-        }
-        .header p {
-            color: var(--text-secondary);
-            font-size: 14px;
-            margin: 0;
-        }
-        .lang-select {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 16px;
-            flex-wrap: wrap;
-        }
-        .lang-btn {
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            padding: 6px 14px;
-            border-radius: 16px;
-            cursor: pointer;
-            font-size: 13px;
-            transition: all 0.2s;
-        }
-        .lang-btn.active, .lang-btn:hover {
-            background: var(--accent-color);
-            color: #FFF;
-            border-color: var(--accent-color);
-        }
-        .content {
-            line-height: 1.7;
-            font-size: 15px;
-        }
-        .content h2 {
-            color: var(--accent-color);
-            font-size: 18px;
-            margin-top: 24px;
-        }
-        .lang-section {
-            display: none;
-        }
-        .lang-section.active {
-            display: block;
-        }
-        .footer {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 12px;
-            color: var(--text-secondary);
-            border-top: 1px solid var(--border-color);
-            padding-top: 20px;
-        }
-        .footer a { color: var(--accent-color); text-decoration: none; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy • Sanctuary Aegis Zero-Knowledge Architecture</title>
+  <meta name="description" content="Sanctuary Aegis Zero-Knowledge, Zero-Cloud Privacy Policy. Full compliance with HIPAA, GDPR, California Two-Party Consent Wiretap Law, and Apple App Store Review Guidelines.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --bg-card: rgba(22, 27, 34, 0.8);
+      --border: rgba(255, 255, 255, 0.1);
+      --border-accent: rgba(52, 211, 153, 0.3);
+      --mint: #10b981;
+      --mint-glow: rgba(16, 185, 129, 0.35);
+      --cyan: #06b6d4;
+      --orange: #f59e0b;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display", sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 60px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 30px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--mint);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .back-link:hover { text-decoration: underline; }
+
+    .header-badge {
+      padding: 6px 14px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid var(--border-accent);
+      color: var(--mint);
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ffffff 40%, var(--mint));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .effective-date {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 36px;
+    }
+
+    .callout-box {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid var(--border-accent);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 40px;
+    }
+
+    .callout-box h3 {
+      font-size: 1.1rem;
+      color: var(--mint);
+      margin-bottom: 8px;
+    }
+
+    .callout-box p {
+      font-size: 0.95rem;
+      color: #e2e8f0;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    p {
+      color: #cbd5e1;
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+
+    ul, ol {
+      margin: 16px 0 20px 24px;
+      color: #cbd5e1;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.88em;
+      color: #38bdf8;
+    }
+
+    .warning-box {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 24px 0;
+    }
+
+    .warning-box h4 {
+      color: var(--orange);
+      margin-bottom: 6px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 30px;
+      margin-top: 60px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="nav-back">
-            <a href="index.html">&larr; Back to Sanctuary Home</a>
+  <div class="container">
+    <header>
+      <a href="index.html" class="back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Sanctuary Aegis
+      </a>
+      <div class="header-badge">Zero-Knowledge Architecture</div>
+    </header>
+
+    <main>
+      <h1>Privacy & Legal Sanctuary Policy</h1>
+      <div class="effective-date">Last Updated: October 2026 • Effective Worldwide</div>
+
+      <div class="callout-box">
+        <h3>🛡️ Fundamental Zero-Cloud Guarantee</h3>
+        <p>
+          <strong>Sanctuary Aegis operates with an uncompromising zero-cloud architecture.</strong> We have zero external database servers, zero analytical tracking pipelines, and zero third-party AI endpoints. All audio processing, automatic transcription (via WhisperKit), cognitive reasoning, and note generation occur strictly inside the memory of your Apple device (iPhone, iPad, or Mac).
+        </p>
+      </div>
+
+      <section>
+        <h2>1. Zero Collection & Storage of Audio Recordings</h2>
+        <p>
+          In traditional transcription software, recorded audio files are persisted to disk or streamed to external cloud servers. Sanctuary Aegis operates on an inverse principle:
+        </p>
+        <ul>
+          <li><strong>Volatile RAM Ring Buffer:</strong> Audio input is captured into transient, unmapped memory strictly for real-time speech tokenization on the Apple Neural Engine (ANE).</li>
+          <li><strong>Zero Disk Footprint:</strong> Raw audio files (.wav, .m4a, .mp3) are <em>never</em> written to local storage, temporary cache directories, or iCloud backup.</li>
+          <li><strong>Deterministic Zero-Fill (memset_s):</strong> The moment a session concludes, the memory buffer is immediately scrubbed with <code>memset_s(0x00)</code>, guaranteeing that audio fragments cannot be recovered even through physical RAM analysis or forensic memory dumping.</li>
+          <li><strong>Cryptographic Proof-of-Erasure:</strong> Every purged session generates a hardware-backed SHA-256 erasure audit certificate anchored in the Apple Secure Enclave.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>2. Protected Health Information (PHI) & HIPAA Compliance</h2>
+        <p>
+          Under the Health Insurance Portability and Accountability Act (HIPAA), covered entities require a Business Associate Agreement (BAA) when transmitting PHI to third-party cloud vendors.
+        </p>
+        <p>
+          Because Sanctuary Aegis never transmits data over any network, <strong>no PHI is ever processed by or disclosed to us or any cloud provider</strong>. Clinicians maintain 100% unilateral custody and control of all therapeutic records.
+        </p>
+        <ul>
+          <li><strong>De-Identified Alias Protocol:</strong> Client profiles are organized strictly by anonymous pseudonyms (e.g., <code>C-2026-X</code>). Entering legal names, social security numbers, or national identification is prohibited by app policy.</li>
+          <li><strong>SQLCipher Hardware Encryption:</strong> Saved clinical drafts and longitudinal timelines are encrypted locally using AES-256 via SQLCipher. Key derivation is secured through Apple Secure Enclave (Key Tag: <code>com.vajrahowly.sanctuaryaegis.secureEnclaveKey</code>).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Statutory Two-Party Wiretap Consent & Audio Gatekeeper</h2>
+        <p>
+          Numerous jurisdictions (including California under Penal Code § 632, Florida under Stat. § 934.03, Pennsylvania, and Taiwan Telecommunications Protection laws) require express two-party consent before recording or transcribing confidential communications.
+        </p>
+        <ul>
+          <li><strong>Mandatory Pre-Flight Consent Gate:</strong> The application does not permit microphone activation until the clinician explicitly confirms that the client has received verbal disclosure and provided informed consent.</li>
+          <li><strong>Audible Acoustic Chime:</strong> An intentional, system-generated chime sounds upon recording initiation, serving as statutory notice of capture.</li>
+          <li><strong>Statutory Proof Logging:</strong> The time and confirmation of mutual consent are permanently embedded in the local clinical session audit trail.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4. Subpoenas & Legal Inquiries</h2>
+        <p>
+          If a court, government agency, or law enforcement entity serves a subpoena, warrant, or discovery request upon the developers of Sanctuary Aegis seeking client audio or clinical records:
+        </p>
+        <p>
+          <strong>We are technically and mathematically incapable of producing any data.</strong> We possess no user accounts, no telemetry logs, no cloud storage, no encryption backdoors, and no server infrastructure. The clinician is the sole custodian of the hardware and encryption keys.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Cross-Device Synchronization & Companion Mode</h2>
+        <p>
+          When using iPhone as a Companion Node with Mac or iPad:
+        </p>
+        <ul>
+          <li><strong>Apple Continuity Microphone:</strong> Audio is transmitted over Apple's native, peer-to-peer hardware link without passing through internet servers.</li>
+          <li><strong>Local Bonjour Pairing:</strong> Direct local-network peer-to-peer encrypted transmission occurs strictly within your local clinic Wi-Fi. No data leaves your room.</li>
+          <li><strong>AirDrop Transfer:</strong> Clinical note packages are transferred device-to-device via Apple's encrypted AirDrop protocol.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>6. Non-Diagnostic Medical Device Disclaimer</h2>
+        <div class="warning-box">
+          <h4>FDA 21 CFR 860 & Apple App Store Guideline 1.4.1 Notice</h4>
+          <p>
+            Sanctuary Aegis is an administrative scribing tool intended to streamline clinical documentation for licensed mental health professionals. It does not provide autonomous medical diagnosis, clinical treatment directives, emergency triage, or pharmaceutical prescription recommendations. Attending clinicians are solely responsible for reviewing, editing, and verifying all generated notes.
+          </p>
         </div>
-        <div class="header">
-            <h1>Sanctuary</h1>
-            <p>Privacy Policy / 隱私政策 / プライバシーポリシー</p>
-            <div class="lang-select">
-                <button class="lang-btn active" onclick="switchLang('en')">English</button>
-                <button class="lang-btn" onclick="switchLang('zh-TW')">繁體中文</button>
-                <button class="lang-btn" onclick="switchLang('zh-CN')">简体中文</button>
-                <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
-                <button class="lang-btn" onclick="switchLang('ko')">한국어</button>
-            </div>
-        </div>
+      </section>
 
-        <div class="content">
-            <!-- English -->
-            <div id="en" class="lang-section active">
-                <h2>1. Zero Data Collection & Privacy Commitment</h2>
-                <p>Sanctuary is a private, encrypted 1-on-1 communication app designed for couples, best friends, and family. We do not log, store, track, or transfer any of your personal data, messages, or chat histories to any external central servers.</p>
+      <section>
+        <h2>7. Contact & Security Inquiries</h2>
+        <p>
+          For cryptographic audit inquiries or privacy questions regarding Sanctuary Aegis:
+        </p>
+        <p>
+          Developer: <strong>Vajra Howly</strong><br>
+          Bundle Identifier: <code>com.vajrahowly.sanctuaryaegis</code><br>
+          Repository: <a href="https://github.com/vajrapadma" target="_blank" style="color: var(--mint);">github.com/vajrapadma</a>
+        </p>
+      </section>
+    </main>
 
-                <h2>2. Encryption & Data Storage</h2>
-                <p>All chat messages, emotion tags, and shared notes are sent and synchronized exclusively via Apple MultipeerConnectivity (P2P end-to-end encryption) or your personal Apple iCloud Private Database. Data remains strictly on your devices and your personal iCloud account.</p>
-
-                <h2>3. Third-Party Analytics & Tracking</h2>
-                <p>Sanctuary contains no third-party advertisements, tracking software, or analytics SDKs. Your personal information is never sold, rented, or shared with any third party.</p>
-
-                <h2>4. Data Deletion</h2>
-                <p>You can clear your chat history anytime inside the app or delete the app completely, which permanently removes all locally stored data.</p>
-
-                <h2>5. Contact Us & Support</h2>
-                <p>If you have any questions regarding this Privacy Policy or need support, please contact us at: <a href="mailto:howly7777777@gmail.com">howly7777777@gmail.com</a>.</p>
-            </div>
-
-            <!-- 繁體中文 -->
-            <div id="zh-TW" class="lang-section">
-                <h2>1. 零資料收集與隱私承諾</h2>
-                <p>Sanctuary 是一款專為情侶、閨密與家人設計的 1-to-1 私密加密通訊工具。我們不會在任何外部中央伺服器上記錄、儲存、追蹤或傳輸您的任何個人資料、對話記錄或對話內容。</p>
-
-                <h2>2. 通訊加密與資料儲存</h2>
-                <p>所有的對話內容、情緒標籤與共用筆記均透過 Apple MultipeerConnectivity（點對點加密）或您個人的 Apple iCloud Private Database 進行傳送與同步。資料僅保留在您與對方的手機裝置及個人 iCloud 帳號中。</p>
-
-                <h2>3. 第三方 SDK 與追蹤</h2>
-                <p>Sanctuary 不包含任何第三方廣告、追蹤代碼或數據分析 SDK。您的個人資訊絕不會被出售、出租或分享給任何第三方公司。</p>
-
-                <h2>4. 資料刪除與安全</h2>
-                <p>您可以隨時於 App 內清除對話記錄，或解除安裝 App，這將會永久且完全刪除本地手機上儲存的所有資料。</p>
-
-                <h2>5. 聯絡方式與支援信箱</h2>
-                <p>若您對隱私政策有任何疑問或需要技術支援，請發送郵件至：<a href="mailto:howly7777777@gmail.com">howly7777777@gmail.com</a> 與我們聯繫。</p>
-            </div>
-
-            <!-- 簡體中文 -->
-            <div id="zh-CN" class="lang-section">
-                <h2>1. 零数据收集与隐私承诺</h2>
-                <p>Sanctuary 是一款专为情侣、闺蜜与家人设计的 1-to-1 私密加密通讯工具。我们不会在任何外部中央服务器上记录、存储、追踪或传输您的任何个人数据或聊天记录。</p>
-
-                <h2>2. 通讯加密与数据存储</h2>
-                <p>所有的聊天内容、情绪标签与共享笔记均通过 Apple MultipeerConnectivity（点对点加密）或您个人的 Apple iCloud Private Database 进行传输。数据仅保留在您与对方的手机设备及个人 iCloud 账号中。</p>
-
-                <h2>3. 无第三方 SDK 追踪</h2>
-                <p>Sanctuary 不包含任何第三方广告或数据分析 SDK。您的个人信息绝不会被出售、出租或分享给任何第三方。</p>
-
-                <h2>4. 数据删除</h2>
-                <p>您可以随时在 App 内清除聊天记录，或卸载 App，这将永久且完全删除本地手机上存储的所有数据。</p>
-
-                <h2>5. 联系方式与支持邮箱</h2>
-                <p>若您对隐私政策有任何疑问或需要技术支持，请发送邮件至：<a href="mailto:howly7777777@gmail.com">howly7777777@gmail.com</a> 与我们联系。</p>
-            </div>
-
-            <!-- 日本語 -->
-            <div id="ja" class="lang-section">
-                <h2>1. 個人情報の収集ゼロとプライバシーの約束</h2>
-                <p>Sanctuaryは恋人・親友・家族のための1-on-1暗号化プライベートチャットアプリです。当社は、お客様の個人データ、メッセージ履歴、チャット内容を外部サーバーに記録、保存、追跡、または送信することはありません。</p>
-
-                <h2>2. 暗号化とデータ保管</h2>
-                <p>すべてのメッセージ、感情タグ、共有ノートは、Apple MultipeerConnectivity（P2P直接暗号化通信）または個人用Apple iCloud Private Databaseを介してのみ共有されます。データはお客様と相手のデバイスおよび個人のiCloudアカウントにのみ保存されます。</p>
-
-                <h2>3. サードパーティ追跡の排除</h2>
-                <p>Sanctuaryには、サードパーティの広告、追跡コード、または分析SDKは一切含まれていません。お客様の個人情報が第三者に販売、共有されることはありません。</p>
-
-                <h2>4. データの消去</h2>
-                <p>アプリ内でチャット履歴を削除するか、アプリをアンインストールすることで、端末に保存されているすべてのデータを完全に消去できます。</p>
-
-                <h2>5. お問い合わせ・サポート窓口</h2>
-                <p>プライバシーポリシーに関するご質問や技術サポートは、メールアドレス：<a href="mailto:howly7777777@gmail.com">howly7777777@gmail.com</a> までお気軽にお問い合わせください。</p>
-            </div>
-
-            <!-- 한국어 -->
-            <div id="ko" class="lang-section">
-                <h2>1. 개인정보 수집 제로 및 정보 보호 프라이버시 약속</h2>
-                <p>Sanctuary는 연인, 절친, 가족을 위한 1대1 암호화 프라이빗 메신저 앱입니다. 당사는 어떠한 개인 데이터, 메시지 기록 또는 대화 내용도 외부 중앙 서버에 저장, 추적 또는 전송하지 않습니다.</p>
-
-                <h2>2. 암호화 및 데이터 저장</h2>
-                <p>모든 대화 내용, 감정 태그 및 공유 메모는 Apple MultipeerConnectivity(P2P 암호화 통신) 또는 개인 Apple iCloud Private Database를 통해서만 전송 및 동기화됩니다.</p>
-
-                <h2>3. 제3자 추적 없음</h2>
-                <p>Sanctuary에는 어떠한 제3자 광고, 추적 코드 또는 분석 SDK도 포함되어 있지 않습니다.</p>
-
-                <h2>4. 데이터 삭제</h2>
-                <p>앱 내에서 대화 기록을 삭제하거나 앱을 삭제하면 기기에 저장된 모든 데이터가 완전히 삭제됩니다.</p>
-
-                <h2>5. 문의처 및 고객 지원 이메일</h2>
-                <p>개인정보 처리방침에 대한 문의사항이나 기술 지원이 필요한 경우 이메일: <a href="mailto:howly7777777@gmail.com">howly7777777@gmail.com</a> 으로 연락 주시기 바랍니다.</p>
-            </div>
-        </div>
-
-        <div class="footer">
-            &copy; 2026 Sanctuary. All rights reserved. | <a href="index.html">Home</a> | Support: <a href="mailto:howly7777777@gmail.com">howly7777777@gmail.com</a>
-        </div>
-    </div>
-
-    <script>
-        function switchLang(lang) {
-            document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
-            document.getElementById(lang).classList.add('active');
-            event.target.classList.add('active');
-        }
-    </script>
+    <footer>
+      © 2026 Vajra Howly. All rights reserved. • Sanctuary Aegis Zero-Knowledge Protocol
+    </footer>
+  </div>
 </body>
 </html>
